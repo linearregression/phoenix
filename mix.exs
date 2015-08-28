@@ -8,6 +8,7 @@ defmodule Phoenix.Mixfile do
      version: @version,
      elixir: "~> 1.0.2 or ~> 1.1-dev",
      deps: deps,
+     aliases: aliases,
      package: package,
      docs: [source_ref: "v#{@version}", main: "Phoenix"],
      name: "Phoenix",
@@ -52,4 +53,9 @@ defmodule Phoenix.Mixfile do
      files: ~w(lib priv test/shared web) ++
             ~w(brunch-config.js CHANGELOG.md LICENSE mix.exs package.json README.md)]
   end
+ 
+  defp aliases do
+    [all: ["deps.get", "compile"]]
+  end
+
 end
